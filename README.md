@@ -7,7 +7,7 @@ Este projeto implementa uma API RESTful para uma plataforma de monitoramento de 
 
 A solução foi desenvolvida utilizando Java + Spring Boot e segue uma arquitetura limpa em camadas, alinhada às melhores práticas.
 
-🎯 1. Objetivo do Projeto
+1. Objetivo do Projeto
 
 O objetivo é construir um backend capaz de:
 
