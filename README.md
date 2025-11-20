@@ -30,17 +30,17 @@ Controller → Service → Repository → Entity
 
 Camadas:
 
-Controller: Lida com requisições HTTP.
+- Controller: Lida com requisições HTTP.
 
-Service: Contém regras de negócio e validações.
+- Service: Contém regras de negócio e validações.
 
-Repository: Acesso ao banco de dados via Spring Data JPA.
+- Repository: Acesso ao banco de dados via Spring Data JPA.
 
-Entity: Classes persistidas no banco.
+- Entity: Classes persistidas no banco.
 
-DTO: Entrada/saída de dados.
+- DTO: Entrada/saída de dados.
 
-Exception Handler: Tratamento global de erros.
+- Exception Handler: Tratamento global de erros.
 
 Banco: H2 (memória)
 ORM: JPA/Hibernate
