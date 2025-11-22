@@ -1,73 +1,92 @@
-INTEGRANTES:
+👥 Integrantes
 
-- CAIO FELIPE DE LIMA BEZERRA | RM: 556197
+- Caio Felipe de Lima Bezerra – RM 556197
 
-- MARCOS VINICIUS DA SILVA COSTA | RM: 555490
+- Marcos Vinicius da Silva Costa – RM 555490
 
-- RAFAEL FEDERICI DE OLIVEIRA | RM: 554736
+- Rafael Federici de Oliveira – RM 554736
 
+🧠 GS 2025 – Plataforma de Monitoramento de Saúde Mental e Bem-Estar
 
+FIAP – Global Solution 2025 · Tema: O Futuro do Trabalho
 
-GS 2025 – Plataforma de Monitoramento de Saúde Mental e Bem-Estar
+Este projeto implementa uma API RESTful focada no monitoramento de saúde mental, permitindo que usuários registrem diariamente informações relacionadas ao seu bem-estar emocional, como:
 
-FIAP – Global Solution 2025
-Tema: O Futuro do Trabalho
+- Humor
 
-Este projeto implementa uma API RESTful para uma plataforma de monitoramento de saúde mental, permitindo que usuários registrem diariamente informações relacionadas ao seu bem-estar emocional, como humor, ansiedade e horas de sono.
+- Ansiedade
 
-A solução foi desenvolvida utilizando Java + Spring Boot e segue uma arquitetura limpa em camadas, alinhada às melhores práticas.
+- Horas de sono
 
-1. Objetivo do Projeto
+A solução foi desenvolvida em Java + Spring Boot, com arquitetura limpa e modular, seguindo todas as exigências e as melhores práticas do mercado.
+
+🎯 1. Objetivo do Projeto
 
 O objetivo é construir um backend capaz de:
 
-- Registrar pacientes
+- Cadastrar pacientes
 
 - Registrar entradas diárias de saúde mental
 
+- Registrar humor, ansiedade e horas de sono
+
 - Realizar acompanhamento contínuo
 
-- Suportar futuras integrações com profissionais de saúde e conteúdos terapêuticos
+- Suportar integrações futuras com profissionais, consultas e conteúdos terapêuticos
 
-Com isso, a plataforma auxilia trabalhadores a prevenir burnout, reduzir estresse e melhorar sua qualidade de vida — conectando-se diretamente ao tema Futuro do Trabalho e aos ODS 3 (Saúde e Bem-Estar) e ODS 8 (Trabalho Decente).
+A plataforma auxilia trabalhadores a prevenir burnout, reduzir estresse e melhorar sua qualidade de vida.
 
-2. Arquitetura da Aplicação
+🏗️ 2. Arquitetura da Aplicação
 
-A aplicação segue a arquitetura:
+A aplicação segue a arquitetura em camadas:
 
 Controller → Service → Repository → Entity
 
-
 Camadas:
 
-- Controller: Lida com requisições HTTP.
+- Controller: controla endpoints e requisições HTTP
 
-- Service: Contém regras de negócio e validações.
+- Service: contém regras de negócio e validações
 
-- Repository: Acesso ao banco de dados via Spring Data JPA.
+- Repository: comunicação com o banco (Spring Data JPA)
 
-- Entity: Classes persistidas no banco.
+- Entity: classes persistidas no banco
 
-- DTO: Entrada/saída de dados.
+- DTOs: transferência de dados (entrada/saída)
 
-- Exception Handler: Tratamento global de erros.
+- Exception Handler: tratamento global de erros
 
-Banco: H2 (memória)
-ORM: JPA/Hibernate
-Validação: Jakarta Bean Validation
+Banco e Validações
 
-3. Tecnologias Utilizadas
+- Banco: H2 em memória
+
+- ORM: JPA / Hibernate
+
+- Validação: Jakarta Bean Validation.
+
+⚙️ 3. Tecnologias Utilizadas
+
 - Java 17
-- Spring Boot 3
-- Spring Data JPA
-- H2 Database
-- Spring Validation
-- Maven
-- Lombok
-- Postman
 
-4. Como Executar o Projeto
- Pré-requisitos:
+- Spring Boot 3
+
+- Spring Web
+
+- Spring Data JPA
+
+- H2 Database
+
+- Spring Validation
+
+- Lombok
+
+- Maven
+
+- Postman para testes
+  
+🚀 4. Como Executar o Projeto
+
+Pré-requisitos:
 
 - Java 17 instalado
 
@@ -75,16 +94,42 @@ Validação: Jakarta Bean Validation
 
 - IntelliJ IDEA ou VS Code
 
- Rodar a aplicação:
+✔ Passo 1 — Clonar o projeto
+
+Abra o terminal e execute:
+
+git clone https://github.com/caiofelipe1/gs_mental_health.git
+cd gs_mental_health
+
+✔ Passo 2 — Executar o projeto (Maven)
 mvn spring-boot:run
 
+Ou, caso esteja usando IntelliJ, basta clicar no botão verde “Run” na classe Application.java.
+
+✔ Passo 3 — Acessar a API
 
 A API sobe automaticamente em:
 
 http://localhost:8080
 
-5. Endpoints da API
-🔹 Pacientes (/api/pacientes)
+✔ Passo 4 — Acessar o Banco H2
+
+Abra:
+
+http://localhost:8080/h2-console
+
+
+Credenciais obrigatórias:
+
+JDBC URL: jdbc:h2:mem:gsmentalhealthdb
+User: sa
+Password: (vazio)
+
+Clique em Connect para visualizar as tabelas.
+
+
+📡 5. Endpoints da API
+🔹 /api/pacientes
 GET /api/pacientes
 
 Lista todos os pacientes.
@@ -94,6 +139,7 @@ POST /api/pacientes
 Cria um novo paciente.
 
 Exemplo de JSON:
+
 {
   "nome": "Vinicius Lira",
   "email": "vinicius.lira@example.com",
@@ -104,26 +150,25 @@ Exemplo de JSON:
 
 GET /api/pacientes/{id}
 
-Busca paciente específico.
+Busca paciente por ID.
 
 PUT /api/pacientes/{id}
 
-Atualiza dados de um paciente.
+Atualiza dados.
 
 DELETE /api/pacientes/{id}
 
 Remove paciente.
 
-🔹 Registros Diários (/api/registros-diarios)
+🔹 /api/registros-diarios
 GET /api/registros-diarios
 
 Lista todos os registros.
 
 POST /api/registros-diarios
 
-Cria um novo registro diário.
-
 Exemplo de JSON:
+
 {
   "dataRegistro": "2025-11-20",
   "nivelHumor": 3,
@@ -139,65 +184,95 @@ Busca registro por ID.
 
 PUT /api/registros-diarios/{id}
 
-Atualiza registro.
+Atualiza.
 
 DELETE /api/registros-diarios/{id}
 
 Remove registro.
 
-6. Banco de Dados H2
+🗄️ 6. Banco de Dados H2
 
-Acesse o console:
+Console:
 
 http://localhost:8080/h2-console
 
 
-Credenciais:
+Configurações:
 
 JDBC URL: jdbc:h2:mem:gsmentalhealthdb
-User: sa
+
+Username: sa
+
 Password: (vazio)
 
-7. Testes com Postman
+Tabelas disponíveis:
 
-✔️ GET /pacientes
+PACIENTES
 
-✔️ POST /pacientes
+REGISTROS_DIARIOS
 
-✔️ POST /registros-diarios
+🧪 7. Testes com Postman
 
-✔️ Respostas 201 CREATED
+Testes realizados com sucesso:
 
-✔️ Listagens funcionando
+✔ GET /api/pacientes
 
-✔️ Validação funcionando (400 BAD REQUEST com mensagens claras)
+✔ POST /api/pacientes
 
-8. Conexão com o Futuro do Trabalho + ODS
+✔ POST /api/registros-diarios
 
-A plataforma proposta:
+✔ GET /api/registros-diarios
 
-Ajuda profissionais a acompanharem seu bem-estar emocional
+✔ PUT e DELETE funcionando
 
-Previne burnout e estresse crônico em ambientes de alta pressão
+✔ Validação Bean Validation (400 Bad Request)
 
-Incentiva autoconsciência e hábitos saudáveis
+Exemplos de erros tratados:
 
-Alinha-se ao ODS 3 – Saúde e Bem-Estar
+Paciente não encontrado
 
-Contribui para ODS 8 – Trabalho Decente ao fomentar ambientes mais humanos
+Registro não encontrado
 
-9. Conclusão
+Campos inválidos
+
+Email inválido
+
+Valores fora do range (humor/ansiedade)
+
+🌍 8. Conexão com Futuro do Trabalho + ODS
+
+A solução contribui diretamente para:
+
+ODS 3 – Saúde e Bem-Estar
+
+Monitoramento contínuo de bem-estar
+
+Registro emocional diário
+
+Prevenção de burnout
+
+ODS 8 – Trabalho Decente
+
+Incentiva ambientes corporativos mais saudáveis
+
+Apoia trabalhadores no equilíbrio emocional
+
+Tecnologia como ferramenta para qualidade de vida
+
+🧾 9. Conclusão
 
 Este projeto entrega:
 
-Arquitetura sólida
+Arquitetura sólida e modular
 
-Código limpo e profissional
+Código limpo e organizado
 
-Endpoints completos
+CRUDs completos e validados
 
-Relação direta com o tema da Global Solution
+Tratamento de exceções global
 
-Documentação alinhada ao padrão FIAP
+Banco configurado com seeds
 
-Testes validados e funcionando
+Documentação completa
+
+Total aderência ao tema da Global Solution
